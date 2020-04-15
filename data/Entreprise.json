@@ -1,0 +1,5 @@
+[{"nom":"entreprise1","locals":"safi","descriptions":"123","Département":[{"id":"1","chef_département":"chef1","description":"345"}]},
+{"nom":"ocp","locals":"safi","descriptions":"2003","Département":[{"id":"Ayoub","chef_département":"taha","description":"2020"},
+    {"id":3,"chef_département":"ayoub","description":"2000"}]},
+    {"nom":"ocsfoot","locals":"safi","descriptions":"333245","Département":[{"id":"1","chef_département":"chokrane","description":"2345"},
+    {"id":4,"chef_département":"ayoub","description":"maroc"}]}]

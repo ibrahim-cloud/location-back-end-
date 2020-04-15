@@ -1,0 +1,17 @@
+[
+    {
+      "name":"bmw",
+      "bestPlayer":"M3",
+      "numberChampionsLeague":13,
+      "NumberOfConsecutiveTitles":5
+        
+        
+    },
+    {
+      "name":"MERCEDES",
+      "bestPlayer":"e63",
+        "numberChampionsLeague":5,
+        "NumberOfConsecutiveTitles":null
+    }
+       
+  ]

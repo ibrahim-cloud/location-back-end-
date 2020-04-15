@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+  <div class="allmenu">
+    <div id="navbar"> <div id="LOGO">
+<img src="IOI.png.png" alt="" srcset="">
+   </div>
+  <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+   <ul>
+<li> <a href="index.html"> Home </a></li>
+<li><a href="RESERVER .html">Reservation </a></li>
+<li> <a href="inscription.html">Inscription</a></li>
+   </ul>
+  </div>
+</div>
+        
+          <div id="tit"><h1 id="cc">Reservation</h1></div>
+<form name="myForm" ><div class="caseall">
+    <div id="firstcase">
+        <span> Nom</span>
+         <input type = "text" required="required" name = "Name" value="" aria-required="true" id="nom"/>
+         <span> Prenom</span>
+         <input type = "text" required="required" value="" name = "Prenom" aria-required="true" id="pren"/>
+         <span> email</span>
+         <input type = "text"  required="required" value="" name = "EMail" aria-required="true" id="email"/>
+         <span> phone</span>
+         <input type = "text" required="required" value="" name = "Phone" aria-required="true" id="tel"/>
+        </div>
+        <div id="lastcase">
+         <span> Date de permis</span>
+         <input type="date" id="datep" name="trip-start"
+       value="2018-07-22"
+       min="1018-01-01" max="2020-12-31" >
+       <span> Date Début de location</span>
+       <input type="date" id="datel" name="trip-start"
+       value="2018-07-22"
+       min="1018-01-01" max="2020-12-31">
+       <span>Date fin de loncation  </span>
+       <input type="date" id="datefl" name="trip-start"
+       value="2018-07-22"
+       min="1018-01-01" max="2020-12-31">
+       <span> select </span>
+       <select  required="required" name = "Cars" id="car">
+        <option value = "-1" selected>[choose yours cars]</option>
+        <option value = "audi r8">audi r8</option>
+        <option value = "ford focus">ford focus</option>
+        <option value = "bmw m3">bmw m3</option>
+        <option value = "jaguar F-type  ">jaguar F-type</option>
+     </select>
+       
+</div>  
+  </div>
+<div id="rv" type = "submit" value = "Submit" name="submit" onclick="validation()">submit </div>
+</form>
+ 
+
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="Page-achat-vente.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+        <label for="uname"><b>votre nom</b></label>
+        <div class="aze" id="nomm"> </div>
+  
+        <label for="psw"><b>votre prenom</b></label>
+        <div id="myDiv" class="aze"> </div>
+        <label for="psw"><b>votre email</b></label>
+        <div class="aze" id="myemail"> </div>
+        <label for="psw"><b>votre telephone</b></label>
+        <div class="aze" id="mytel"> </div>
+        <label for="psw"><b>votre date permis</b></label>
+        <div class="aze" id="mydatep"> </div>
+        <label for="psw"><b>date de fin de location</b></label>
+        <div class="aze" id="mydatef"> </div>
+        <label for="psw"><b>votre voiture que vous avez choisire</b></label>
+        <div class="aze" id="myv"> </div>
+        <button type="submit"onclick="document.getElementById('id01').style.display='none'">validè</button>
+       
+      </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    
+    </div>
+  </form>
+  <div id="pr" style="width: auto; height: 900PX;">
+
+
+  </div>
+</div>
+
+<div class="fot">
+  <div class="div1">
+<ul>
+  <li> <span> Services</span></li>
+  <li> <a href="index.html"> Home </a></li>
+  <li><a href="RESERVER .html">Reservation </a></li>
+  <li> <a href="inscription.html">Inscription</a></li>
+     </ul>
+    </div>
+    <div class="div2">
+    <ul>
+      <li> <span>  A Propos de Nous</span></li>
+      <li> <a href="https://www.hertz.ma/location-voiture-maroc/contact">Contacter Nous </a></li>
+      <li><a href="https://www.hertz.ma/location-voiture-maroc/conditions-generales-location">Conditions générales de location </a></li>
+      <li> <a href="https://www.hertz.ma/location-voiture-maroc/mentions-legales">Mentions légales</a></li>
+      <li> <a href="https://www.hertz.ma/faq">FAQ</a></li>
+         </ul>
+        </div>
+
+<div class="div3">
+         <ul>
+          <li> <span>  Nos partenaires </span></li>
+          <li> <a href="https://www.hertz.ma/">hertz.ma</a></li>
+          <li><a href="https://www.carigami.fr/location-voiture.html?gclid=Cj0KCQiAnL7yBRD3ARIsAJp_oLbb_D_Po19UtouTOCUI7atjcfY9_oVywrAPUyiIamuKUOgISvUayVEaAtXlEALw_wcB">carigami.fr</a></li>
+          <li> <a href="https://www.kayak.fr/">kayak.fr</a></li>
+          <li> <a href="inscription.html">Location safi Taha</a></li>
+             </ul>
+            </div>
+    </div>  
+
+<script src="javascript2.js"></script>
+
+</body>
+
+</html>

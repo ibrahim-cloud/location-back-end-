@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Page1</title>
+</head>
+<body style="color: aliceblue; background-color: black;">
+
+    <!-- ////////////////////////////////////////////////////////////////// -->
+    <div class="allmenu">
+        <div id="navbar"> <div id="LOGO">
+    <img src="/assets/S-blue.png" alt="" srcset="">
+       </div>
+      <input type="checkbox" id="check">
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+       <ul>
+    <li> <a href="/pageH"> Home </a></li>
+    <li><a href="/Page1">Reservation </a></li>
+    <li> <a href="/page5">Inscription</a></li>
+       </ul>
+      </div>
+    </div>
+            
+              <div id="tit"><h1 id="cc">Reservation</h1></div>
+    <!-- //////////////////////////////////////////////////////////////////////// -->
+    <div id="company-new">
+        <form action="/op" method="POST" style="    WIDTH: 50%; margin-left: 27%;">
+        
+         <span> Nom</span>
+            <input type="text" id="inputs-size" id="nom" name="nom" placeholder="nom" required>
+            <span> Pernom</span>
+            <input type="text" name="chef_département" placeholder="Pernom" id="pren" required>
+           
+    <span> email</span>
+    <input type = "text"  required="required" value="" name = "email" aria-required="true" id="email"/>
+            <span> phone</span>
+    <input type = "text" required="required" value="" name = "Phone" aria-required="true" id="tel"/>
+    
+          
+    
+            <span> Date de permis</span>
+    <input type="date"  name="trip-start" id="datep" style="    WIDTH: 100%;
+    HEIGHT: 63PX;
+    border: 1px solid #ccc;"
+  value=""
+  min="1018-01-01" max="2020-12-31" >
+  <span> Date Début de location</span>
+  <input type="date"  name="trip-start"  id="datel" style="  WIDTH: 100%;
+  HEIGHT: 63PX;
+  border: 1px solid #ccc;"
+  value="2018-07-22"
+  min="1018-01-01" max="2020-12-31">
+    
+    <span>Date fin de loncation  </span>
+  <input type="date"  name="DF" id="datefl" style="WIDTH: 100%;
+  HEIGHT: 63PX;
+  border: 1px solid #ccc;"
+  value=" "
+  min="1018-01-01" max="2020-12-31">
+  <span> select </span>
+  <select  required="required"
+  id="modal" name = "cars" style="WIDTH: 100%;
+  HEIGHT: 63PX;
+  border: 1px solid #ccc;"> 
+   <option value = "-1" selected>[choose yours cars]</option>
+   <option value = "Audi R8">audi r8</option>
+   <option value = "ford focus">ford focus</option>
+   <option value = "bmw m3">bmw m3</option>
+   <option value = "jaguar F-type  ">jaguar F-type</option>
+</select>
+   </div>
+
+
+</select>
+
+<button id="dd1" class="btn btn-info" style="background-color: #00aeef;    margin-top: 53PX;" onclick="validation()"> Add Reservation</button>
+  </div></form>
+    <!-- Liste des Departements -->
+
+    <div class="container mt-40">
+       
+        <section class="row mt-30">
+          <%for(i in list) {%>
+           
+            <div class="col-sm-12 col-md-4">
+                <div class="gallery" style="height: auto;">
+                    <div class="box20 blue">
+                       
+                    <img src="/assets/opo.jpg" alt="CAR"> 
+                   <div class="desc"><h1><%= list[i].cars %></h1> </div>
+                        <h4 class="title" id="title">Nom : <span><%=list[i].nom%></span></h4>
+                          <!-- <div id="dep"> -->
+                                <div class="childs" id="child1">
+                                     
+                                   <h4> ID : <span> <%=list[i].id%> </span></h4> 
+                                   <h4> Phone: <span> <%=list[i].Phone%> </span></h4>
+                                   <h4> Email : <span> <%=list[i].email%> </span></H4> 
+                                    <h4> DF : <span> <%=list[i].DF%> </span></H4> 
+                                      <a style="color: white;
+                                      BACKGROUND-COLOR: RED;
+                                      MARGIN-LEFT: 119PX;
+                                      PADDING: 17PX;" href="/delete/<%= list[i].id %>" class="btn">delete</a>
+                                               <button class="btn btn-danger" data-toggle="modal" data-target="#myModal" id="rvn" onclick="get(this)" name=" <%=list[i].id%> " > Edit // <%=list[i].id%> </button>
+                                </div>
+                            </div>
+                    </div>
+                </div>  <%}%>   
+                 
+            </div>
+              
+        </section>
+    </div>
+    <div class="blank"></div>
+    <div class="blank"></div>
+        <div class="blank-div"></div>
+        <!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h1 class="modal-title">Modifier la voiture</h1>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+        
+        
+                         <form action="/up" method="post">
+                          
+       <div class="form-group">
+         <input type="text" id="vv" name="id" value="<%=list[i].id%>" >
+         <label  style="color: black;">Name</label>
+                              <!-- <label for="exampleInputPassword1">Product image</label> -->
+                              <input class="form-control"  class="form-control is-valid" name="nom" required="on" value="<%=list[i].nom%>">
+                          </div>
+                          <!-- ///////////// -->
+                         
+                          <div class="form-group"> 
+                            <label  style="color: black;">cars</label>
+                              <!-- <label for="exampleInputPassword1">Product Name</label> -->
+                              <input class="form-control" class="form-control is-valid" name="cars" id="title" required="on" value="<%= list[i].cars %>">
+                          </div>
+
+                          <div class="form-group">
+                            <label style="color: black;">email</label>
+                            <!-- <label for="exampleInputPassword1">Product Name</label> -->
+                            <input class="form-control" class="form-control is-valid" name="email" id="title" required="on" value="<%=list[i].email%>">
+                        </div>
+              
+                          <div class="form-group">
+                            <label  style="color: black;">Phone</label>
+                              <!-- <label for="exampleInputPassword1">Price</label> -->
+                              <input class="form-control" class="form-control is-valid" name="Phone" id="author" required="on" value="<%=list[i].Phone%> ">
+                          </div>
+
+                          <div class="form-group">
+                            <label style="color: black;">DF</label>
+                              <!-- <label for="exampleInputPassword1">Price</label> -->
+                              <input class="form-control" class="form-control is-valid" name="DF" id="author" required="on" value=" <%=list[i].DF%>">
+                          </div>
+              
+                           <button type="submit" class="btn btn-danger">submit</button>
+      </div>  
+     
+             </form>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+       
+            <div class="blank-div"></div>
+        </form> 
+            <div class="blank-div"></div>
+    </div>
+    <div class="blank-div"></div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="/assets/javascript1.js"></script>
+        <script src="/assets/javascript2.js"></script>
+        
+</body>
+</html>
